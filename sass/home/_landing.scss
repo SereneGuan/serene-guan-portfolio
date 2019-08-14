@@ -1,0 +1,286 @@
+.landingbody {
+    background-color: $w; //background-color:#191919;
+    margin-top:120px;
+    width: 100%;
+    display: inline-block; //border:1px solid black;
+}
+.banner-logo{
+    margin-top:0px;
+}
+.logobg-big,
+.logobg-small,
+.logo-s,
+.logo-innerdots,
+.logo-outterdots,
+.resume {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.logobg-big {
+    width: 30vh;
+    height: 30vh;
+    border-radius: 15vh;
+    margin-top: 0vh;
+    background-color: $blue-i;
+    animation: big 2s infinite ease;
+}
+
+.logobg-small {
+    width: 26vh;
+    height: 26vh;
+    border-radius: 13vh;
+    box-sizing: border-box; //define the box size, border width is included.
+    margin-top: -28vh; // -(30/2+26/2)
+    border-style: solid;
+    border-width: 6px;
+    border-color: $blue-iv;
+    background-color: $w; //background-color: rgba(255, 255, 255, 0.5);
+    animation: border 2s infinite ease;
+}
+
+.logo-s {
+    width: 22vh;
+    height: 22vh; //position: fixed;
+    margin-top: -24vh; // -(26/2+22/2)
+    transform-origin: 50%;
+    animation: logo-s 4s infinite ease;
+}
+
+.logo-innerdots {
+    width: 26vh;
+    height: 26vh;
+    margin-top: -24vh; // -(22/2+26/2)
+    transform-origin: 50%;
+    animation: innerdots 4s infinite ease;
+}
+
+.logo-outterdots {
+    width: 29vh;
+    height: 29vh;
+    margin-top: -27.5vh; //-(26/2+29/2)
+    transform-origin: 50%;
+    animation: outterdots 4s infinite ease;
+}
+
+.selfdescription {
+    padding-top: 5vh;
+    text-align: center;
+    p {
+        // learn from codepen
+        color: $b;
+        font-family: $title;
+        font-size: $body-font;
+        font-weight: 300;
+        strong {
+            color: $b;
+            font-weight: 600;
+        }
+    }
+}
+
+
+
+@keyframes logo-s {
+    0% {
+        transform: rotate(-30deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes outterdots {
+    0% {
+        transform: rotate(-120deg);
+    }
+    50% {
+        transform: rotate(120deg);
+    }
+    100% {
+        transform: rotate(-120deg);
+    }
+}
+
+@keyframes innerdots {
+    0% {
+        transform: rotate(40deg);
+    }
+    50% {
+        transform: rotate(-40deg);
+    }
+    100% {
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes border {
+    0% {
+        border-color: $w;
+    }
+    50% {
+        border-color: $blue-s;
+    }
+    100% {
+        border-color: $w;
+    }
+}
+
+@keyframes big {
+    0% {
+        background-color: $blue-i;
+    }
+    50% {
+        background-color: $blue-iv;
+    }
+    100% {
+        background-color: $blue-i;
+    }
+}
+
+
+//learn from codepen
+$slider-name: typing-slider;
+$slides: 4;
+$typing-duration: 5s;
+$tab-letters: 35 39 22 32; //number of characters in each paragraph
+$background: $w;
+@keyframes cursor {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: $w;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 100%;
+    }
+    90%,
+    to {
+        width: 0;
+    }
+}
+
+@keyframes slide {
+    #{100% / $slides} {
+        font-size: 48px;
+        letter-spacing: 4px;
+    }
+    to {
+        font-size: 0;
+        letter-spacing: 0;
+    }
+}
+@include respond (ipad){
+    @keyframes slide {
+        #{100% / $slides} {
+            font-size: 32px;
+            letter-spacing: 4px;
+            
+        }
+        to {
+            font-size: 0;
+            letter-spacing: 0;
+        }
+    }
+}
+@include respond (screen1){
+    @keyframes slide {
+        #{100% / $slides} {
+            font-size: 28px;
+            letter-spacing: 4px;
+            
+        }
+        to {
+            font-size: 0;
+            letter-spacing: 0;
+        }
+    }
+}
+@include respond (tablet-portrait){
+    @keyframes slide {
+        #{100% / $slides} {
+            font-size: 32px;
+            letter-spacing: 4px;
+            
+        }
+        to {
+            font-size: 0;
+            letter-spacing: 0;
+        }
+    }
+}
+.#{$slider-name} p {
+    //"p" to overwrite the global p
+    font-family: Inconsolata;
+    color: $b;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.#{$slider-name} p {
+    position: relative;
+    display: inline;
+    font-size: 0;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    animation: slide $typing-duration * $slides step-start infinite;
+}
+
+.#{$slider-name} p::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-left: 3px solid $b;
+    background-color: $background;
+    animation: typing $typing-duration infinite, cursor 1s infinite;
+}
+
+@each $letters in $tab-letters {
+    $i: index($tab-letters, $letters);
+    .#{$slider-name} p:nth-child(#{$i}) {
+        animation-delay: $typing-duration * ($i - 1);
+        &::after {
+            animation-delay: $typing-duration * ($i - 1);
+            animation-timing-function: steps(#{$letters}),
+            step-end;
+        }
+    }
+}
+
+.resume{
+    width: 180px;
+    height: 60px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 16px;
+    margin-top: 3vh;
+    box-sizing: border-box;
+    font-weight: 600;
+    background-color: $flamingo-ii;
+    a{       
+        color: $w;
+        font-size: $f20;
+        font-family: $title;
+        display: inline-block;
+        //padding:10px 20px 10px 20px // top/bot/left/right;
+    }
+    
+    &:hover{
+        color: $w;
+        background-color: $flamingo-i;
+        box-shadow: 0px 0px 10px rgba($color: $flamingo-i, $alpha: 0.5)
+    }
+}

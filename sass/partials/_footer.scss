@@ -1,0 +1,53 @@
+.footerwrapper {
+    margin: 0 auto;
+    @include respond (ipad){
+        width: 90vw;
+    }
+    @include respond (tablet-portrait){
+        width: 90vw;
+    }
+}
+
+.footersection1 {
+    //background-color: $b;
+    //background-color: black;
+    //border-top: 2px solid $b;
+    width: 100%;
+    margin-top:5vh;
+    padding-top: 60px;
+    padding-bottom: 70px;
+    overflow: hidden;
+    text-align: center;
+  
+}
+.footersocialmedia {
+    margin-top: 8vh;
+}
+.footersocialmedia li {
+    display: inline-block;
+    padding-left: 1%;
+    padding-right:1%;
+    svg {
+        width: 35px;
+        height: 35px;
+        path{
+            fill: $blue-s;
+        }
+    }
+}
+
+.footersection2 {
+    width: 100%;
+    
+    color: $w;
+    text-align: center;
+    .copyright {
+        margin: 0 auto; 
+        margin-bottom: 15px;
+        p{
+            font-family: $title;
+            color: $b;
+        }
+       
+    }
+}

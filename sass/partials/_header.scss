@@ -1,0 +1,96 @@
+//homepage header
+.homeheader {
+    &.sticky { //sticky header
+        top: 0;
+        width: 100%;
+        transition: all 1s ease;
+        position: fixed;
+        z-index: 1000; //background-color: rgba(58, 58, 58, 0.8);
+    }
+}
+.quarter-circles{ 
+    z-index:100;
+    .quarter-circle-top-left{
+        width: 120px;
+        height: 120px;
+        background: $blue-iv;
+        border-radius: 0 0 120px 0;
+        //float:left;
+        top:0;
+        left:0;
+        transition: all 0.5s ease-in-out;
+        position:fixed;
+        //box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: .1);
+        &:hover{
+            border-radius: 0;
+            
+        }
+    }
+    .quarter-circle-top-right{
+        width: 120px;
+        height: 120px;
+        //float:right;
+        right:0;
+        top:0;
+        //margin-top:0;
+        background: $flamingo-i;
+        border-radius: 0 0 0 120px;
+        color: $w;
+        font-family: $title;
+        font-size: $f20;
+        font-weight: 900;
+        padding-top: 30px;
+        text-align: center;
+        position:fixed;
+        transition: all 0.5s ease-in-out;
+        //box-shadow: -5px 5px 10px rgba($color: #000000, $alpha: .1);
+        &:hover{
+            border-radius: 0;
+        }
+    
+    }
+}
+
+.headerlogo svg{
+    width: 70px;
+    height: 70px;
+    margin: 8px 8px;
+    display: inline-block;
+}
+
+
+.burger-menu{
+    width: 5vh;
+    height: 5vh;
+    float: right;
+    margin-top: 1.2vh;
+    margin-right: 5%;
+    display: none;//hide the burger menu on desktop version
+    &.sticky{
+        margin-top: 0.7vh;
+    }
+    @include respond (ipad){
+        display: initial;//hide the burger menu on desktop version  
+    }
+    @include respond (tablet-portrait){
+        display: initial;//hide the burger menu on desktop version  
+    }
+    @include respond (iphone-five){
+        display: initial;//hide the burger menu on desktop version  
+    } 
+    
+}
+
+
+//animation
+@keyframes logospin {
+    0% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}

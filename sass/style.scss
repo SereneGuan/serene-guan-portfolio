@@ -1,0 +1,14 @@
+//base
+@import 'base/normalize';
+@import 'base/color';
+@import 'base/font';
+@import 'base/media';
+@import 'base/global';
+//home
+@import 'home/landing';
+@import 'home/workcover';
+//partials
+@import 'partials/header';
+@import 'partials/footer';
+//works
+@import 'works/workglobal';

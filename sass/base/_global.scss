@@ -1,0 +1,118 @@
+//serene customized
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+/*
+* {
+    box-sizing: border-box;
+}*/
+
+
+/*.container {
+    width: 100%;
+    height: 100%;
+    margin: 0!important;
+}*/
+
+
+/*.container>section {
+    overflow: hidden; //eleminate the overlapping
+    clear: both;
+}*/
+
+section {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+ul {
+    padding: 0; // remove the left margin of indentation
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+nav {
+    text-decoration: none;
+}
+
+p {
+    //content
+    color: $b;
+    font-family: $font;
+    font-size: $body-font;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 15px 0 0;
+    @include respond (ipad){
+        font-size: $f14;
+    }
+    @include respond (tablet-portrait){
+        font-size: $f14;
+    }
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 20px;
+}
+
+h1 {
+    //title
+    text-transform: capitalize;
+    text-align: center;
+    font-family: $title;
+    font-size: $h1;
+    font-weight: 600;
+    //margin: 0; 
+    padding-top: 80px;
+    @include respond (ipad){
+        font-size: $h1;
+    }
+}
+
+h2 {
+    //subtitle
+    font-family:$title;
+    color: $blue-s;
+    font-size: $h2;
+    font-weight: 500;
+    margin: 0;
+    @include respond (ipad){
+        font-size: $h2;
+    }
+}
+
+h3 {
+    //subtitle
+    font-family:$title;
+    font-size: $body-font;
+    color: $w;
+    font-weight: 400;
+    margin: 0;
+    @include respond (ipad){
+        font-size: $body-font;
+    }
+}
+strong {
+    color: $w;
+    font-weight: 900;
+}
+
+ button{
+            background-color:transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+            outline:none;
+        }

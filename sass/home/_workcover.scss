@@ -1,0 +1,135 @@
+.portfolio {
+    background-color: $w;
+}
+
+.filters {
+    list-style: none;
+    text-align: center;
+    margin-top: 8vh;
+    margin-left:0;
+    margin-right:0;
+    border-radius: 20px;
+    border: 2px solid $blue-s;
+    font-size: $body-font;
+    color: $b;
+    font-weight: 300;
+    overflow: hidden;
+    display: inline-block;
+    li {
+        padding: 10px 20px;
+        display: block;
+        cursor: pointer;
+        float: left;
+        &:nth-child(n+2) {
+            border-left: inherit;
+        }
+        &:hover {
+            background: $blue-s;
+            color: $w;
+        }
+    }
+    .active {
+        background-color: $blue-s;
+        color: $w;
+    }
+}
+
+.wrapperglobal {
+    text-align: center;
+    z-index: -2000;
+    .workcover {
+        width: 85%; 
+        height:1400px;
+        font-size: $h2;
+        margin: 0 auto;
+        li {
+            width: 33.33333333%;
+            //padding-left: 5%;
+            //padding-right:5%;
+            padding:0.5%;
+            display: inline-block;
+            position: relative;
+            @include respond (ipad) {
+                width: 100%;
+            }
+            @include respond (tablet-portrait) {
+                width: 100%;
+            }
+           
+        }
+        @include respond (iphone-five) {
+            width: 90%;
+            li{
+                width: 100%;
+            }
+        }
+        a {
+            // was an inline element by defaults;
+            display: block; //make the <a> cover the whole img
+            width: auto;
+            //height: auto;
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left:0;
+                right: 0;
+                bottom: 0;
+                opacity:0;
+                //background-color: $blue-s;
+                background: rgba(0,0,0, 0.8);
+                transition: .5s;
+            }
+            img {
+                width: 100%;
+                height: auto; 
+            }
+            .text-overlay{
+                margin-top: -35%;
+                position: absolute;
+                opacity: 0;
+                left: 0;
+                right:0;
+                transition: .5s;
+             }
+            &:hover .text-overlay, &:hover:before{
+                opacity:1;
+            } 
+            .cover-text{
+                font-family: $title;
+                font-size: $h2;
+                font-weight: bold;
+                color:$w;
+                text-align: center;
+                z-index: 1000;
+            }
+            
+            /*&:hover:before{
+                background: rgba(114,204,204, 0.8);   
+                span{
+                    opacity: 1;
+                }
+            }*/
+        }
+        &>div {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+}
+
+@keyframes downarrow {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:.2;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
