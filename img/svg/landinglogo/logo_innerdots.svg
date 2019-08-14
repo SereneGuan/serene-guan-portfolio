@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="inner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+	.inner0{fill:#EF403C;}
+</style>
+<circle class="inner0" cx="500" cy="10" r="10"/>
+<circle class="inner0" cx="10" cy="500" r="10"/>
+<circle class="inner0" cx="990" cy="500" r="10"/>
+<circle class="inner0" cx="500" cy="990" r="10"/>
+</svg>
