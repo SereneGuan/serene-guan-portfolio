@@ -7,15 +7,8 @@
         <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/bm/logo.ico" type="image/ico">
         <link rel="Bookmark" href="img/bm/logo.ico" />
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145007006-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-145007006-1');
-        </script>
+     
+ 
 
     </head>
 
